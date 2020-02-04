@@ -23,17 +23,40 @@ class videoController {
     static async getAll(req, res) {
         try {
           const allVideo = await videoService.getAll();
+          // console.log('a', allVideo);
+          
           if (allVideo.length > 0) {
             response.setSuccess(200, "Found Video", allVideo);
+            return response.send(res);
           } else {
             response.setSuccess(404, "Video not found", allVideo );
+            return response.send(res);
           }
-          return response.send(res);
         } catch (error) {
           response.setError(400, error.message);
           return response.send(res);
         }
     }
+
+    static async getDetail(req, res) {
+      try {
+        const {
+          id
+        } = req.body;
+
+        const allVideo = await videoService.getOne(id);
+        if(utility.issetVal(allVideo)){
+          response.setSuccess(200, "Found Video", allVideo);
+          return response.send(res);
+        } else {
+          response.setSuccess(404, "Video not found", allVideo );
+          return response.send(res);
+        }
+      } catch (error) {
+        response.setError(400, error.message);
+        return response.send(res);
+      }
+  }
 }
 
 module.exports = videoController;
