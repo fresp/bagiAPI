@@ -29,6 +29,7 @@ router.delete("/group",message.deleteGroup)
 // router.post("/getRangeMessage", message.getRange);
 
 router.post("/signup", user.signup);
+router.post("/signin", user.signin);
 
 
 
