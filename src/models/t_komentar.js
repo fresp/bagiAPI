@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     ref_user_id: DataTypes.NUMBER,
     ref_video_id: DataTypes.NUMBER,
     content: DataTypes.TEXT
-  }, {});
+  }, {freezeTableName: true});
   T_Komentar.associate = function(models) {
     // associations can be defined here
   };
