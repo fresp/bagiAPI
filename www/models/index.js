@@ -1,8 +1,12 @@
 
 const userService =  require("./userService")
-const videoService =  require("./videoService")
+const likeService =  require("./likeService")
+const dislikeService =  require("./dislikeService")
+const commentService =  require("./commentService")
 
 module.exports = {
     userService
-    , videoService
+    , likeService
+    , dislikeService
+    , commentService
 }

@@ -8,7 +8,6 @@ import path  from "path";
 dotenv.config()
 
 const axios = require('axios');
-const { connect } = require('./helpers/mongoose_adapter')
 const Response = require('./helpers/response');
 const appDir = path.dirname(require.main.filename);
 
@@ -48,18 +47,4 @@ app.use('/images', express.static(__dirname + '/upload/images'));
 
 app.set('trust proxy', 1) // trust first proxyx
 
-async function start() {
-  try {
-    const mongo = await connect();
-    if(!mongo){
-      console.log('Error: DB not connected');
-    }
-  }
-  catch(e){
-    console.log('Something when wrong!!');
-  }
-}
-
-
-start()
 module.exports =  app;
