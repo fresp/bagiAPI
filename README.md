@@ -5,7 +5,19 @@
 npm install
 ```
 
-## Migrate Schema Sequalize
+
+## Migrate database
+```
+edit file configs>config.json 
+change this line { "development": {
+    "username": "root",
+    "password": "",
+    "database": "bagidata",
+    "host": "localhost",
+    "dialect": "mysql"
+  }}
+with your database
+```
 ```
 npx sequelize-cli db:migrate
 ```
