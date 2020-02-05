@@ -1,4 +1,4 @@
-# bagiData API Test Case
+# bagidata.com API Test Case
 
 ## Project setup
 ```
