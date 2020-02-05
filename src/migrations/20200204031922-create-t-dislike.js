@@ -7,10 +7,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.STRING
       },
-      ref_user_id: {
-        type: Sequelize.STRING
-      },
-      ref_video_id: {
+      videoId: {
         type: Sequelize.STRING
       },
       createdAt: {

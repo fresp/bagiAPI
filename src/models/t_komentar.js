@@ -1,10 +1,10 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const T_Komentar = sequelize.define('T_Komentars', {
-    ref_user_id: DataTypes.NUMBER,
-    ref_video_id: DataTypes.NUMBER,
+    videoId: DataTypes.STRING,
+    name: DataTypes.STRING,
     content: DataTypes.TEXT
-  }, {freezeTableName: true});
+  }, {freezeTableName: true,timestamps: true});
   T_Komentar.associate = function(models) {
     // associations can be defined here
   };
