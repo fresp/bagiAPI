@@ -22,6 +22,11 @@ with your database
 npx sequelize-cli db:migrate
 ```
 
+## Run Project
+```
+npm start
+```
+
 ## URL
 ```
 endpoint : localhost:6969
