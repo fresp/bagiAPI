@@ -79,8 +79,9 @@ class IO {
         wwwNs.to(data.videoId).emit("disliked", response);
       });
 
-      socket.on("comment",  async (data) => {
+      socket.on("comment",  async (data, callback) => {
         // Push Database
+        callback("hello");
         console.log("Socket comment", data);
        
         const query = {
@@ -93,6 +94,8 @@ class IO {
         const comment = await CommentService.insertData(query);
         wwwNs.to(data.videoId).emit("comment", query);
       });
+
+      
     });
   };  
 }
